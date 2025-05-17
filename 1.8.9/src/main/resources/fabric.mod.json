@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "quickreload",
+  "version": "${version}",
+  "name": "Quick Reload",
+  "description": "Adds a button to reload the world",
+  "authors": [
+    "speedycube64"
+  ],
+  "contact": {
+    "homepage": "https://github.com/speedycube64/",
+    "sources": "https://github.com/speedycube64/"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/quickreload/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+    ]
+  },
+  "mixins": [
+    "quickreload.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.19",
+    "minecraft": "1.8.9"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
