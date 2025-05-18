@@ -1,6 +1,10 @@
 package net.fabricmc.quickreload.mixin;
 
+<<<<<<< Updated upstream
 import net.minecraft.client.MinecraftClient;
+=======
+import net.fabricmc.loader.api.FabricLoader;
+>>>>>>> Stashed changes
 import net.minecraft.client.gui.screen.GameMenuScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.TitleScreen;
@@ -13,7 +17,11 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+<<<<<<< Updated upstream
 import java.util.List;
+=======
+import net.fabricmc.quickreload.CMRHelper;
+>>>>>>> Stashed changes
 
 @Mixin(GameMenuScreen.class)
 public class QuickReloadMixin extends Screen{
@@ -36,8 +44,38 @@ public class QuickReloadMixin extends Screen{
             // get world name
             String saveName = client.getServer().getLevelName();
 
+<<<<<<< Updated upstream
             // reconnect
             this.client.startIntegratedServer(saveName, saveName, null);
+=======
+            // disconnect
+            this.client.world.disconnect();
+            this.client.connect((ClientWorld)null);
+
+            // check if custom map resetter is loaded
+            boolean cmrLoaded = FabricLoader.getInstance().isModLoaded("custom-map-resetter");
+
+            // if it is, work around custom map resetter's stuff
+            if (cmrLoaded) {
+
+                // keep track of whether the player was resetting maps
+                boolean wasResetting = CMRHelper.getRunning();
+
+                // turn off the resetter
+                CMRHelper.setRunning(false);
+
+                // reload the world
+                this.client.startIntegratedServer(saveName, saveName, null);
+
+                // turn the resetter back on if it was on before
+                CMRHelper.setRunning(wasResetting);
+            }
+
+            // if custom map resetter is NOT loaded just reconnect like normal
+            else {
+                this.client.startIntegratedServer(saveName, saveName, null);
+            }
+>>>>>>> Stashed changes
         }
     }
 
