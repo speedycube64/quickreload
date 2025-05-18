@@ -1,7 +1,11 @@
 package net.fabricmc.quickreload.mixin;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import net.minecraft.client.MinecraftClient;
+=======
+import net.fabricmc.loader.api.FabricLoader;
+>>>>>>> Stashed changes
 =======
 import net.fabricmc.loader.api.FabricLoader;
 >>>>>>> Stashed changes
@@ -18,7 +22,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import java.util.List;
+=======
+import net.fabricmc.quickreload.CMRHelper;
+>>>>>>> Stashed changes
 =======
 import net.fabricmc.quickreload.CMRHelper;
 >>>>>>> Stashed changes
