@@ -62,8 +62,9 @@ dependencies {
 	// modImplementation(legacy.apiModule("legacy-fabric-item-groups-v1", project.fabric_version))
 
 	// custom map resetter dependency
-	// modImplementation "maven.modrinth:DStLkW4t:t1baK3sI"
 	modImplementation "maven.modrinth:custom-map-resetter:1.4.0-1.7.x-1.12.x"
+	// SpeedRunIGT dependency
+	modImplementation "maven.modrinth:speedrunigt:14.2+1.8.9"
 }
 
 processResources {
