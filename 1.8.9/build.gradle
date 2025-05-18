@@ -8,7 +8,20 @@ base.archivesName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
-repositories {}
+repositories {
+	exclusiveContent {
+		forRepository {
+			maven {
+				name = "Modrinth"
+				url = "https://api.modrinth.com/maven"
+			}
+		}
+		filter {
+			includeGroup "maven.modrinth"
+		}
+	}
+}
+
 
 loom {
 	// Only needed for versions not available from vanilla launcher by default.
@@ -47,6 +60,10 @@ dependencies {
 
 	// You can retrieve a specific api module using this notation.
 	// modImplementation(legacy.apiModule("legacy-fabric-item-groups-v1", project.fabric_version))
+
+	// custom map resetter dependency
+	// modImplementation "maven.modrinth:DStLkW4t:t1baK3sI"
+	modImplementation "maven.modrinth:custom-map-resetter:1.4.0-1.7.x-1.12.x"
 }
 
 processResources {
