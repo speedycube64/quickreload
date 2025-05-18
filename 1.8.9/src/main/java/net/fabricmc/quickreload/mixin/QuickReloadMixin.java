@@ -25,7 +25,8 @@ public class QuickReloadMixin extends Screen{
         ));
     }
 
-    @Inject(method = "buttonClicked", at = @At("HEAD"))
+    // do this as late as possible so that speedrunigt can save stuff first
+    @Inject(method = "buttonClicked", at = @At("TAIL"))
     private void quickReload(ButtonWidget button, CallbackInfo ci) {
 
         // Check for button ID and singleplayer
