@@ -20,7 +20,7 @@ public class QuickReloadMixin extends Screen{
         this.buttons.add(new ButtonWidget(
                 146, //arbitrary button ID
                 this.width / 2 - 100,
-                this.height / 4 + 144 - 16, //right below S+Q button
+                this.height / 4 + 160 - 16, //2 rows below S+Q button
                 "Quick Reload"
         ));
     }
