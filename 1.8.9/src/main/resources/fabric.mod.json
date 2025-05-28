@@ -15,7 +15,7 @@
   "icon": "assets/quickreload/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": [
+    "client": [
     ]
   },
   "mixins": [

@@ -4,9 +4,10 @@
   "package": "net.fabricmc.quickreload.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "QuickReloadMixin"
+    "GameMenuScreenMixin"
   ],
   "client": [
+    "MinecraftClientMixin"
   ],
   "injectors": {
     "defaultRequire": 1
