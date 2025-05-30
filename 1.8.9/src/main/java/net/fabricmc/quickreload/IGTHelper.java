@@ -11,7 +11,7 @@ public class IGTHelper {
 
     public static boolean getSaveTask(){
         try {
-            // Access the private member of the timer class
+            // Access the private member of the timer class with reflection
             InGameTimer timer = InGameTimer.getInstance();
             Field field = timer.getClass().getDeclaredField("waitingSaveTask");
             field.setAccessible(true);

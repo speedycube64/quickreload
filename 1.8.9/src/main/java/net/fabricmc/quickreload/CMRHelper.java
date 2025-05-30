@@ -1,5 +1,5 @@
-// This class hosts the custom map resetter stuff outside of the mixin so that the mixin works even if custom map
-// resetter is not loaded
+// This class hosts the custom map resetter stuff outside of the QuickReloadHelper so that quick reload can work with
+// custom map resetter loaded or not loaded
 
 package net.fabricmc.quickreload;
 import xyz.tildejustin.custommapresetter.CustomMapResetter;
